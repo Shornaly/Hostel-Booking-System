@@ -1,0 +1,43 @@
+{% extends 'basic.html' %}
+{% block body %}
+<h1 style="color:red;font-style:italic;">Book your hostel from here-</h1>
+<form  method="POST" class="row g-3 py-5 px-7 mx-5">
+  {% csrf_token %}
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">Full name</label>
+      <input type="text" class="form-control" name="Fullname" id="validationDefault01"  required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">phone</label>
+      <input type="text" class="form-control" name="Phone"id="validationDefault02"  required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefaultUsername" class="form-label">Room no.</label>
+      <div class="input-group">
+        <span class="input-group-text" id="inputGroupPrepend2"></span>
+        <input type="text" class="form-control" name="Room" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationDefault03" class="form-label">e-mail</label>
+      <input type="email" class="form-control" name="Email"id="validationDefault03" required>
+    </div>
+    <div class="col-md-3">
+      <label for="validationDefault04" class="form-label">category</label>
+      <select class="form-select" name="Category"id="validationDefault04" required>
+        <option selected disabled value="">Select category</option>
+        <option>4 seated room</option>
+        <option>3 seated room</option>
+        <option>2 seated room</option>
+        <option>Single room</option>
+        
+      </select>
+    </div>
+    
+    
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>
+{% endblock body%}
+
